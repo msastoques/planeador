@@ -22,7 +22,7 @@ function generarDocumentos() {
     let respuesta = ui.alert('Generador de documentos. Pulsa Si para continuar', ui.ButtonSet.YES_NO);
     if (respuesta == ui.Button.YES) {
     //obteber planeador-plantilla
-    const plantilla = DriveApp.getFileById('1xhr4df2XdAXws9ghTIxqdHzJ0A1oI-WatCyzGRDqcRw');
+    const plantilla = plantilla();
 
     let fila = 2;
     
@@ -38,7 +38,7 @@ function generarDocumentos() {
     let periodo;
     let semanas;    
 
-    let carpeta = DriveApp.getFolderById('1d2q17bN0WMrp56anzZjENQQsDmkk6oqT');
+    let carpeta = carpeta();
 
     while(celda != ''){
        
@@ -105,18 +105,7 @@ function generarDocumentos() {
 
 }
 
-//funciones de prueba
 
-//traer el número de columnas de un rango
-function getNumCol() {
-
-    DriveApp.getFileById('1xhr4df2XdAXws9ghTIxqdHzJ0A1oI-WatCyzGRDqcRw');
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
-    var sheet = ss.getSheets()[0];
-    
-    var range = sheet.getRange("B2:D5");
-    Logger.log(range.getNumColumns());
-}
 
 
 
