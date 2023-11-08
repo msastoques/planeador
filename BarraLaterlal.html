@@ -13,14 +13,76 @@
         body {
             background-color: rgb(255, 243, 205);
         }
+
+            .loading-container {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f4f4f4;
+            }
+
+            .loading-spinner {
+                border: 8px solid #f3f3f3;
+                border-top: 8px solid rgb(25, 135, 84);
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                animation: spin 1s linear infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            p {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+        
     </style>
 </head>
 
 <body>
-    <img style="width: 50%;" src="https://institucion-educativa-eugenio-diaz-castro.micolombiadigital.gov.co/sites/institucion-educativa-eugenio-diaz-castro/content/files/000001/14_eugenio2_200x200.png" alt="" class="img-fluid p-3">
+    <img style="width: 50%;"
+        src="https://institucion-educativa-eugenio-diaz-castro.micolombiadigital.gov.co/sites/institucion-educativa-eugenio-diaz-castro/content/files/000001/14_eugenio2_200x200.png"
+        alt="" class="img-fluid p-3">
     <div class="d-flex flex-column m-2">
-        <button class="btn btn-success m-2" onclick="google.script.run.generarDocumentos()">Generar Documentos</button>
+        <button id="miBoton" class="btn btn-success m-2" onclick="generarDocumentos()">Generar Documentos</button>
     </div>
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <p>Procesando...</p>
+    </div>
+    <script>
+        function generarDocumentos() {
+            // Obtén una referencia al botón por su ID o como mejor lo necesites.
+            var boton = document.getElementById('miBoton');
+            // Deshabilita el botón.
+            boton.disabled = true;
+
+            google.script.run.withSuccessHandler(habilitarBoton).generarDocumentos()
+
+            //Iniciar animación de 'procesando'
+            document.querySelector(".loading-container").style.display = "flex";
+        }
+
+        // Habilita el botón.
+        function habilitarBoton() {
+            var boton = document.getElementById('miBoton');
+            boton.disabled = false;
+
+            //Detener animación de 'procesando'
+            document.querySelector(".loading-container").style.display = "none";
+        }
+    </script>
 </body>
 
 </html>
