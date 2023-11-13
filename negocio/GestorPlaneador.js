@@ -9,7 +9,7 @@ class GestorPlaneador {
   }
 
   getDatos(fila) {
-    const rango = this._hojaActual.getRange('A' + fila + ':AD' + fila);
+    const rango = this._hojaActual.getRange('A' + fila + ':AK' + fila);
     
     this._planeadorModel.estado = rango.getCell(1, 1).getValue();
     this._planeadorModel.grado = rango.getCell(1, 2).getValue();
@@ -38,6 +38,17 @@ class GestorPlaneador {
     this._planeadorModel.Herramientas1 = rango.getCell(1, 24).getValue();
     this._planeadorModel.Herramientas2 = rango.getCell(1, 25).getValue();
     this._planeadorModel.Herramientas3 = rango.getCell(1, 26).getValue();
+
+    this._planeadorModel.momento1 = rango.getCell(1, 27).getValue();
+    this._planeadorModel.momento2 = rango.getCell(1, 28).getValue();
+    this._planeadorModel.momento3 = rango.getCell(1, 29).getValue();
+    this._planeadorModel.diseno1 = rango.getCell(1, 30).getValue();
+    this._planeadorModel.diseno2 = rango.getCell(1, 31).getValue();
+    this._planeadorModel.diseno3 = rango.getCell(1, 32).getValue();
+    this._planeadorModel.pregunta1 = rango.getCell(1, 33).getValue();
+    this._planeadorModel.pregunta2 = rango.getCell(1, 34).getValue();
+    this._planeadorModel.pregunta3 = rango.getCell(1, 35).getValue();
+    this._planeadorModel.observaciones = rango.getCell(1, 36).getValue();
 
 
 

@@ -188,6 +188,94 @@ function generarDocumentos() {
                     body.replaceText('<d3>', '');
                     body.replaceText('<<herramienta3>>', '');
                 }
+
+                if (planeador.momento1 != "") {
+                    body.replaceText('<m1>', '✔');
+                    body.replaceText('<<momento1>>', planeador.momento1);
+                }
+                else {
+                    body.replaceText('<m1>', '');
+                    body.replaceText('<<momento1>>', '');
+                }
+                
+
+                if (planeador.momento2 != "") {
+                    body.replaceText('<m2>', '✔');
+                    body.replaceText('<<momento2>>', planeador.momento2);
+                }
+                else {
+                    body.replaceText('<m2>', '');
+                    body.replaceText('<<momento2>>', '');
+                }
+                
+
+                if (planeador.momento3 != "") {
+                    body.replaceText('<m3>', '✔');
+                    body.replaceText('<<momento3>>', planeador.momento3);
+                }
+                else {
+                    body.replaceText('<m3>', '');
+                    body.replaceText('<<momento3>>', '');
+                }
+                
+
+                if (planeador.diseno1 != "") {
+                    body.replaceText('<ñ1>', '✔');
+                    body.replaceText('<<diseño1>>', planeador.diseno1);
+                }
+                else {
+                    body.replaceText('<ñ1>', '');
+                    body.replaceText('<<diseño1>>', '');
+                }
+                
+
+                if (planeador.diseno2 != "") {
+                    body.replaceText('<ñ2>', '✔');
+                    body.replaceText('<<diseño2>>', planeador.diseno2);
+                }
+                else {
+                    body.replaceText('<ñ2>', '');
+                    body.replaceText('<<diseño2>>', '');
+                }
+                
+
+                if (planeador.diseno3 != "") {
+                    body.replaceText('<ñ3>', '✔');
+                    body.replaceText('<<diseño3>>', planeador.diseno3);
+                }
+                else {
+                    body.replaceText('<ñ3>', '');
+                    body.replaceText('<<diseño3>>', '');
+                }
+
+                if (planeador.pregunta1 != "") {
+                    body.replaceText('<g1>', '✔');
+                    body.replaceText('<<pregunta1>>', planeador.pregunta1);
+                }
+                else {
+                    body.replaceText('<g1>', '');
+                    body.replaceText('<<pregunta1>>', '');
+                }
+
+                if (planeador.pregunta2 != "") {
+                    body.replaceText('<g2>', '✔');
+                    body.replaceText('<<pregunta2>>', planeador.pregunta2);
+                }
+                else {
+                    body.replaceText('<g2>', '');
+                    body.replaceText('<<pregunta2>>', '');
+                }
+
+                if (planeador.pregunta3 != "") {
+                    body.replaceText('<g3>', '✔');
+                    body.replaceText('<<pregunta3>>', planeador.pregunta3);
+                }
+                else {
+                    body.replaceText('<g3>', '');
+                    body.replaceText('<<pregunta3>>', '');
+                }
+
+                body.replaceText('<<observaciones>>', planeador.observaciones);
                 //convertir a pdf y guardar en carpeta
 
                 documento.saveAndClose();
@@ -196,6 +284,8 @@ function generarDocumentos() {
                 docPdf.setName(documento.getName() + '.pdf');
                 docNuevo.moveTo(carpeta)
                 DriveApp.createFile(docPdf).moveTo(carpeta);
+
+                
 
                 //#region enviar correos
                 // let destinatario = 'msastoque@cips.edu.co';

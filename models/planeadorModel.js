@@ -41,7 +41,7 @@ class PlaneadorModel {
     this._pregunta1 = '';
     this._pregunta2 = '';
     this._pregunta3 = '';
-    this._observaciones = ''
+    this._observaciones = '';
   }
 
   get estado() {
