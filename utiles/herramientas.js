@@ -20,7 +20,7 @@ function literalNumero(numero) {
 
   function reemplazarComasYEspaciosPorGuiones(texto) {
     // Utiliza la función replace con una expresión regular para reemplazar comas y espacios por guiones.
-    const textoModificado = texto.replace(/[, ]/g, '-');
+    let textoModificado = texto.replace(/[, ]/g, '-');
     return textoModificado;
   }
 
@@ -32,7 +32,7 @@ function literalNumero(numero) {
  */
 function reemplazarComasYEspaciosPorGuiones(texto) {  
   // Utiliza la función replace con una expresión regular para reemplazar comas y espacios por guiones.
-  const textoModificado = texto.replace(/ y /g, '-').replace(/[, ]/g, '-').replace(/--/g, '-');
+  let textoModificado = texto.replace(/ y /g, '-').replace(/[, ]/g, '-').replace(/--/g, '-');
   return textoModificado;
 }
 //probar

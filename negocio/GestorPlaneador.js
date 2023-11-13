@@ -27,6 +27,19 @@ class GestorPlaneador {
     this._planeadorModel.tarea = rango.getCell(1, 14).getValue();
     this._planeadorModel.interactiva = rango.getCell(1, 15).getValue();
     this._planeadorModel.otras = rango.getCell(1, 16).getValue();
+    this._planeadorModel.paradigma = rango.getCell(1, 17).getValue();
+
+    this._planeadorModel.Habilidad1 = rango.getCell(1, 18).getValue();
+    this._planeadorModel.Habilidad2 = rango.getCell(1, 19).getValue();
+    this._planeadorModel.Habilidad3 = rango.getCell(1, 20).getValue();
+    this._planeadorModel.Seguimiento1 = rango.getCell(1, 21).getValue();
+    this._planeadorModel.Seguimiento2 = rango.getCell(1, 22).getValue();
+    this._planeadorModel.Seguimiento3 = rango.getCell(1, 23).getValue();
+    this._planeadorModel.Herramientas1 = rango.getCell(1, 24).getValue();
+    this._planeadorModel.Herramientas2 = rango.getCell(1, 25).getValue();
+    this._planeadorModel.Herramientas3 = rango.getCell(1, 26).getValue();
+
+
 
     //chequear que el documento fue creado
     const estado = this._planeadorModel.estado;
@@ -37,7 +50,7 @@ class GestorPlaneador {
       const fechaActual = new Date();
       const fechaFormateada = formatDateWithDayAndMonthName(fechaActual);
 
-      rango.getCell(1, 30).setValue(fechaFormateada)
+      rango.getCell(1, 37).setValue(fechaFormateada)
       rango.getCell(1, 1).insertCheckboxes();
       rango.getCell(1, 1).setValue('true');
     }

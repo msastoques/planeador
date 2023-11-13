@@ -93,14 +93,101 @@ function generarDocumentos() {
                     body.replaceText('<i>', '');
                 }
 
+                body.replaceText('<<otras>>', planeador.otras);
 
-                // body.replaceText('<<otras>>', rango.getCell(1, 16).getValue());
+                if (planeador.paradigma == "Convergente") {
+                    body.replaceText('<c>', '✔');
+                    body.replaceText('<d>', '');
+                }
+                else if (planeador.paradigma == "Divergente"){
+                    body.replaceText('<c>', '');
+                    body.replaceText('<d>', '✔');
+                }
+                else{
+                    body.replaceText('<c>', '');
+                    body.replaceText('<d>', '');
+                }
 
-                // body.replaceText('<c>', rango.getCell(1, 9).getValue());
-                // body.replaceText('<d>', rango.getCell(1, 9).getValue());
+                if (planeador.Habilidad1 != "") {
+                    body.replaceText('<h1>', '✔');
+                    body.replaceText('<<habilidad1>>', planeador.Habilidad1);
+                }
+                else {
+                    body.replaceText('<h1>', '');
+                    body.replaceText('<<habilidad1>>', '');
+                }
 
+                if (planeador.Habilidad2 != "") {
+                    body.replaceText('<h2>', '✔');
+                    body.replaceText('<<habilidad2>>', planeador.Habilidad2);
+                }
+                else {
+                    body.replaceText('<h2>', '');
+                    body.replaceText('<<habilidad2>>', '');
+                }
+                
+                if (planeador.Habilidad3 != "") {
+                    body.replaceText('<h3>', '✔');
+                    body.replaceText('<<habilidad3>>', planeador.Habilidad3);
+                }
+                else {
+                    body.replaceText('<h3>', '');
+                    body.replaceText('<<habilidad3>>', '');
+                }
 
+                if (planeador.Seguimiento1 != "") {
+                    body.replaceText('<s1>', '✔');
+                    body.replaceText('<<seguimiento1>>', planeador.Seguimiento1);
+                }
+                else {
+                    body.replaceText('<s1>', '');
+                    body.replaceText('<<seguimiento1>>', '');
+                }
 
+                if (planeador.Seguimiento2 != "") {
+                    body.replaceText('<s2>', '✔');
+                    body.replaceText('<<seguimiento2>>', planeador.Seguimiento2);
+                }
+                else {
+                    body.replaceText('<s2>', '');
+                    body.replaceText('<<seguimiento2>>', '');
+                }
+
+                if (planeador.Seguimiento3 != "") {
+                    body.replaceText('<s3>', '✔');
+                    body.replaceText('<<seguimiento3>>', planeador.Seguimiento3);
+                }
+                else {
+                    body.replaceText('<s3>', '');
+                    body.replaceText('<<seguimiento3>>', '');
+                }
+
+                if (planeador.Herramientas1 != "") {
+                    body.replaceText('<d1>', '✔');
+                    body.replaceText('<<herramienta1>>', planeador.Herramientas1);
+                }
+                else {
+                    body.replaceText('<d1>', '');
+                    body.replaceText('<<herramienta1>>', '');
+                }
+
+                if (planeador.Herramientas2 != "") {
+                    body.replaceText('<d2>', '✔');
+                    body.replaceText('<<herramienta2>>', planeador.Herramientas2);
+                }
+                else {
+                    body.replaceText('<d2>', '');
+                    body.replaceText('<<herramienta2>>', '');
+                }
+
+                if (planeador.Herramientas3 != "") {
+                    body.replaceText('<d3>', '✔');
+                    body.replaceText('<<herramienta3>>', planeador.Herramientas3);
+                }
+                else {
+                    body.replaceText('<d3>', '');
+                    body.replaceText('<<herramienta3>>', '');
+                }
                 //convertir a pdf y guardar en carpeta
 
                 documento.saveAndClose();
