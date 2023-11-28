@@ -32,8 +32,14 @@ function literalNumero(numero) {
  */
 function reemplazarComasYEspaciosPorGuiones(texto) {  
   // Utiliza la función replace con una expresión regular para reemplazar comas y espacios por guiones.
+try {
   let textoModificado = texto.replace(/ y /g, '-').replace(/[, ]/g, '-').replace(/--/g, '-');
   return textoModificado;
+} catch (error) {
+  return texto;
+}
+
+  
 }
 //probar
 //function probar()

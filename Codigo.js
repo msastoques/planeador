@@ -1,7 +1,7 @@
 /**
  * Planeador MEDITA
  * @author msastoque
- * @since 25 de Octubre 2022
+ * @since 25 de Octubre 2023
  */
 
 function onOpen() {
